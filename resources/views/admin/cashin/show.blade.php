@@ -86,6 +86,22 @@
                                                 @endif
                                             </td>
                                         </tr>
+                                        <tr>
+                                            <th scope="row" class="text-muted">Added By:</th>
+                                            <td>
+                                                <div class="d-flex align-items-center">
+                                                    <div class="avatar-xs mr-3">
+                                                        <span class="avatar-title rounded-circle bg-primary">
+                                                            {{ strtoupper(substr($cashIn->addedBy->name ?? 'U', 0, 1)) }}
+                                                        </span>
+                                                    </div>
+                                                    <div>
+                                                        <h6 class="mb-0">{{ $cashIn->addedBy->name ?? 'Unknown User' }}</h6>
+                                                        <small class="text-muted">{{ $cashIn->addedBy->email ?? 'No email' }}</small>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
                                     </tbody>
                                 </table>
                             </div>

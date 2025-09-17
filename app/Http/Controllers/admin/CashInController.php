@@ -15,7 +15,7 @@ class CashInController extends Controller
      */
     public function index(Request $request)
     {
-        $query = CashIn::query();
+        $query = CashIn::with('addedBy');
 
         // Search functionality
         if ($request->has('search') && !empty($request->search)) {
@@ -23,7 +23,10 @@ class CashInController extends Controller
             $query->where(function($q) use ($search) {
                 $q->where('source', 'LIKE', "%{$search}%")
                   ->orWhere('note', 'LIKE', "%{$search}%")
-                  ->orWhere('amount', 'LIKE', "%{$search}%");
+                  ->orWhere('amount', 'LIKE', "%{$search}%")
+                  ->orWhereHas('addedBy', function($userQuery) use ($search) {
+                      $userQuery->where('name', 'LIKE', "%{$search}%");
+                  });
             });
         }
 
@@ -75,6 +78,7 @@ class CashInController extends Controller
                 'source' => $request->source,
                 'amount' => $request->amount,
                 'note' => $request->note,
+                'added_by' => auth()->id(),
             ]);
 
             return redirect()->route('cashin.index')
@@ -92,7 +96,7 @@ class CashInController extends Controller
     public function show(string $id)
     {
         try {
-            $cashIn = CashIn::findOrFail($id);
+            $cashIn = CashIn::with('addedBy')->findOrFail($id);
             return view('admin.cashin.show', compact('cashIn'));
         } catch (\Exception $e) {
             return redirect()->route('cashin.index')
@@ -106,7 +110,7 @@ class CashInController extends Controller
     public function edit(string $id)
     {
         try {
-            $cashIn = CashIn::findOrFail($id);
+            $cashIn = CashIn::with('addedBy')->findOrFail($id);
             return view('admin.cashin.edit', compact('cashIn'));
         } catch (\Exception $e) {
             return redirect()->route('cashin.index')
@@ -187,7 +191,7 @@ class CashInController extends Controller
         ->get();
 
         // Recent cash ins (last 10)
-        $recentCashIns = CashIn::latest()->take(10)->get();
+        $recentCashIns = CashIn::with('addedBy')->latest()->take(10)->get();
 
         // Top sources
         $topSources = CashIn::select('source', DB::raw('SUM(amount) as total_amount'))

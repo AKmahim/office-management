@@ -186,6 +186,7 @@
                                     <th>Source</th>
                                     <th>Amount</th>
                                     <th>Note</th>
+                                    <th>Added By</th>
                                     <th>Date</th>
                                     <th>Actions</th>
                                 </tr>
@@ -197,6 +198,16 @@
                                         <td>{{ $cashIn->source }}</td>
                                         <td class="text-success font-weight-bold">${{ number_format($cashIn->amount, 2) }}</td>
                                         <td>{{ Str::limit($cashIn->note, 30) }}</td>
+                                        <td>
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar-xs mr-2">
+                                                    <span class="avatar-title rounded-circle bg-primary">
+                                                        {{ strtoupper(substr($cashIn->addedBy->name ?? 'U', 0, 1)) }}
+                                                    </span>
+                                                </div>
+                                                <span class="font-size-12">{{ $cashIn->addedBy->name ?? 'Unknown' }}</span>
+                                            </div>
+                                        </td>
                                         <td>{{ $cashIn->created_at->format('M d, Y') }}</td>
                                         <td>
                                             <div class="btn-group" role="group">
@@ -213,7 +224,7 @@
                                     </tr>
                                 @empty
                                     <tr>
-                                        <td colspan="6" class="text-center text-muted">
+                                        <td colspan="7" class="text-center text-muted">
                                             No recent cash in records found.
                                         </td>
                                     </tr>

@@ -118,6 +118,7 @@
                                     <div class="card-body">
                                         <h6 class="card-title text-muted">Record Information</h6>
                                         <p class="mb-1"><strong>ID:</strong> #{{ $cashIn->id }}</p>
+                                        <p class="mb-1"><strong>Added By:</strong> {{ $cashIn->addedBy->name ?? 'Unknown' }}</p>
                                         <p class="mb-1"><strong>Created:</strong> {{ $cashIn->created_at->format('M d, Y \a\t H:i') }}</p>
                                         <p class="mb-0"><strong>Updated:</strong> {{ $cashIn->updated_at->format('M d, Y \a\t H:i') }}</p>
                                     </div>

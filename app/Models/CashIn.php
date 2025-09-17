@@ -15,4 +15,12 @@ class CashIn extends Model
         'note',
         'added_by',
     ];
+
+    /**
+     * Get the user who added this cash in record
+     */
+    public function addedBy()
+    {
+        return $this->belongsTo(\App\Models\User::class, 'added_by');
+    }
 }
