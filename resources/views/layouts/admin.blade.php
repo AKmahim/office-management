@@ -172,14 +172,13 @@
                         <li class="has-submenu">
                             <a href="{{ url('/dashboard') }}"><i class="fe-airplay"></i>Dashboard</a>
                         </li>
-
                         <li class="has-submenu">
-                            <a href="#"><i class="ri-video-add-fill"></i>Event Management</a>
+                            <a href="#"><i class="ri-video-add-fill"></i>Cash In</a>
                             <ul class="submenu">
-                                <li><a href="{{ route('event.index') }}">Event List</a></li>
-                                <li><a href="{{ route('event.statistics') }}">Event Statistics</a></li>
-                                <li><a href="{{ route('event.create') }}">Event Create</a></li>
-                               
+                                <li><a href="{{ route('cashin.index') }}">Cash In List</a></li>
+                                <li><a href="{{ route('cashin.create') }}">Cash In Create</a></li>
+                                <li><a href="{{ route('cashin.statistics') }}">Cash In Statistics</a></li>
+
                             </ul>
                         </li>
 

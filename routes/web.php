@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\EventController;
 use App\Http\Controllers\admin\ContentController;
 use App\Http\Controllers\admin\DashboardController;
+use App\Http\Controllers\admin\CashInController;
 
 use App\Http\Controllers\DownloadPageController;
 
@@ -56,7 +57,7 @@ Route::middleware('auth')->group(function () {
         Route::get('/statistics/filter', 'statisticsFilter')->name('event.statistics.filter');
     });
 
-     // ============================ event management route ============
+     // ============================ content management route ============
     Route::prefix('content')->controller(ContentController::class)->group(function () {
         Route::get('/', 'index')->name('content.index');
         // Route::get('/create', 'create')->name('event.create');
@@ -65,6 +66,18 @@ Route::middleware('auth')->group(function () {
         // Route::get('/edit/{id}', 'edit')->name('event.edit');
         // // Route::patch('/{event}', 'update')->name('event.update');
         // Route::get('/destroy/{id}', 'destroy')->name('event.destroy');
+    });
+
+    // ============================ cash in management route ============
+    Route::prefix('cashin')->controller(CashInController::class)->group(function () {
+        Route::get('/', 'index')->name('cashin.index');
+        Route::get('/create', 'create')->name('cashin.create');
+        Route::post('/', 'store')->name('cashin.store');
+        Route::get('/{id}', 'show')->name('cashin.show');
+        Route::get('/edit/{id}', 'edit')->name('cashin.edit');
+        Route::put('/{id}', 'update')->name('cashin.update');
+        Route::delete('/{id}', 'destroy')->name('cashin.destroy');
+        Route::get('/statistics/view', 'statistics')->name('cashin.statistics');
     });
 });
 
