@@ -17,6 +17,8 @@ return new class extends Migration
             // Using float for amount, consider using decimal for better precision in financial data
             $table->float('amount', 15, 2); 
             $table->text('note')->nullable();
+            $table->unsignedBigInteger('added_by'); // User who added the cash in entry
+            $table->foreign('added_by')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }

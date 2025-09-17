@@ -13,5 +13,6 @@ class CashIn extends Model
         'source',
         'amount',
         'note',
+        'added_by',
     ];
 }
