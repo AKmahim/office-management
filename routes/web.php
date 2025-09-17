@@ -6,6 +6,7 @@ use App\Http\Controllers\admin\EventController;
 use App\Http\Controllers\admin\ContentController;
 use App\Http\Controllers\admin\DashboardController;
 use App\Http\Controllers\admin\CashInController;
+use App\Http\Controllers\admin\CashOutController;
 
 use App\Http\Controllers\DownloadPageController;
 
@@ -78,6 +79,18 @@ Route::middleware('auth')->group(function () {
         Route::put('/{id}', 'update')->name('cashin.update');
         Route::delete('/{id}', 'destroy')->name('cashin.destroy');
         Route::get('/statistics/view', 'statistics')->name('cashin.statistics');
+    });
+
+    // ============================ cash out management route ============
+    Route::prefix('cashout')->controller(CashOutController::class)->group(function () {
+        Route::get('/', 'index')->name('cashout.index');
+        Route::get('/create', 'create')->name('cashout.create');
+        Route::post('/', 'store')->name('cashout.store');
+        Route::get('/{id}', 'show')->name('cashout.show');
+        Route::get('/edit/{id}', 'edit')->name('cashout.edit');
+        Route::put('/{id}', 'update')->name('cashout.update');
+        Route::delete('/{id}', 'destroy')->name('cashout.destroy');
+        Route::get('/statistics/view', 'statistics')->name('cashout.statistics');
     });
 });
 

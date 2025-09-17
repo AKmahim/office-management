@@ -178,18 +178,26 @@
                                 <li><a href="{{ route('cashin.index') }}">Cash In List</a></li>
                                 <li><a href="{{ route('cashin.create') }}">Cash In Create</a></li>
                                 <li><a href="{{ route('cashin.statistics') }}">Cash In Statistics</a></li>
-
                             </ul>
                         </li>
 
                         <li class="has-submenu">
+                            <a href="#"><i class="ri-money-dollar-circle-line"></i>Cash Out</a>
+                            <ul class="submenu">
+                                <li><a href="{{ route('cashout.index') }}">Cash Out List</a></li>
+                                <li><a href="{{ route('cashout.create') }}">Cash Out Create</a></li>
+                                <li><a href="{{ route('cashout.statistics') }}">Cash Out Statistics</a></li>
+                            </ul>
+                        </li>
+
+                        {{-- <li class="has-submenu">
                             <a href="#"><i class="ri-video-add-fill"></i>Content Management</a>
                             <ul class="submenu">
                                 <li><a href="{{ route('content.index') }}">Photobooth Content</a></li>
-                                {{-- <li><a href="{{ route('event.create') }}">Event Create</a></li> --}}
+                                
                                
                             </ul>
-                        </li>
+                        </li> --}}
 
                        
 
