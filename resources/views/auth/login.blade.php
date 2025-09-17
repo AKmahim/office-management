@@ -28,7 +28,7 @@
                                 
                                 <div class="text-center w-75 m-auto">
                                     <a href="{{ url('/')}}" >
-                                        <span><h1 class="color-black">PhotoWorld</h1></span>
+                                        <span><h1 class="color-black">XR Interactive</h1></span>
                                     </a>
                                     <h5 class="text-uppercase text-center font-bold mt-4">Sign In</h5>
 

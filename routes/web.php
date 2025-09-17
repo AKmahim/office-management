@@ -21,7 +21,7 @@ use App\Http\Controllers\DownloadPageController;
 */
 
 Route::get('/', function () {
-    return view('event.nestle.welcome');
+    return redirect()->route('dashboard');
 });
 // ================================================================ download page routes =================================================
 Route::get('/find-content', [DownloadPageController::class, 'index'])->name('find-content');
