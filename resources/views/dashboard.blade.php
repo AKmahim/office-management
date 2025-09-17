@@ -39,7 +39,7 @@
         <div class="card-box tilebox-one">
             <i class="fe-layers float-right"></i>
             <h5 class="text-muted text-uppercase mb-3 mt-0">Total Events</h5>
-            <h3 class="mb-3"><i class="ri-calendar-event-fill"></i><span data-plugin="counterup">{{ $total_events }}</span></h3>
+            <h3 class="mb-3"><span data-plugin="counterup">{{ $total_events }}</span></h3>
             {{-- <span class="badge badge-primary"> -29% </span> <span class="text-muted ml-2 vertical-middle">From previous
                 period</span> --}}
         </div>
@@ -49,7 +49,7 @@
         <div class="card-box tilebox-one">
             <i class="fe-tag float-right"></i>
             <h5 class="text-muted text-uppercase mb-3 mt-0">Total Content</h5>
-            <h3 class="mb-3"><i class="ri-camera-ai-fill"></i><span data-plugin="counterup">{{ $total_contents }}</span></h3>
+            <h3 class="mb-3"><span data-plugin="counterup">{{ $total_contents }}</span></h3>
             
         </div>
     </div>

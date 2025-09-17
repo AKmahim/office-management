@@ -1,0 +1,6 @@
+#CashIn
+=> source,amount,note
+
+
+#CashOut
+=> source,amount,reciever,given_by,payout_method,note,

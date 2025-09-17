@@ -150,10 +150,10 @@
                     <a href="{{ url('/dashboard') }}" class="logo text-center">
                         <span class="logo-lg">
                             {{-- <img src="{{ asset('admin') }}/assets/images/logo-light.png" alt="" height="16"> --}}
-                            <span class="logo-lg-text-light">PhotoWorld</span> 
+                            <span class="logo-lg-text-light">XR Interactive</span> 
                         </span>
                         <span class="logo-sm">
-                            <span class="logo-sm-text-dark">PhotoWorld</span> 
+                            <span class="logo-sm-text-dark">XR Interactive</span> 
                             {{-- <img src="{{ asset('admin') }}/assets/images/logo-sm.png" alt="" height="24"> --}}
                         </span>
                     </a>
@@ -257,7 +257,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    2025 - 2030 &copy; Photoworld by <a href="https://xri.com.bd" class="text-muted">Xr Interactive</a>
+                    2025 - 2030 &copy; Office Management by <a href="https://xri.com.bd" class="text-muted">Xr Interactive</a>
                 </div>
             </div>
         </div>
